@@ -1,0 +1,849 @@
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+html, body {
+  max-width: 81%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+body{
+  background-image: url(./images/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 7px;
+  }
+
+::-webkit-scrollbar-thumb {
+    background:#505050; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #434343;
+}
+
+#menu{
+  font-size: xx-large;
+  top: 0.7%;
+  left: 0.5%;
+  cursor: pointer;
+  color: #ffffff;
+  position: absolute;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  font-family: 'Fuzzy Bubbles', cursive;
+  font-weight: bold;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.overlay a {
+  padding: 10px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #919191;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+.button{
+    background-image: url(./images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    outline: none;
+}
+
+.button1{
+    background-image: url(./images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    border-radius: 50%;
+    padding: 0.5%;
+    cursor: pointer;
+    position: absolute;
+    outline: none;
+}
+
+.imp{
+    padding-left: 1.25%;
+    padding-right: 1.25%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.imp-forward{
+    padding-left: 0.75%;
+    padding-right: 0.5%;
+    padding-top: 0.6%;
+    padding-bottom: 0.6%;
+}
+
+.imp-backward{
+    padding-right: 0.75%;
+    padding-left: 0.5%;
+    padding-top: 0.6%;
+    padding-bottom: 0.6%;
+}
+
+.imp-volume-plus{
+    padding-right: 0.6%;
+    padding-left: 0.6%;
+    padding-top: 0.55%;
+    padding-bottom: 0.55%;
+}
+
+.imp-volume-minus{
+    padding-right: 0.75%;
+    padding-left: 0.75%;
+    padding-top: 0.55%;
+    padding-bottom: 0.55%;
+}
+
+
+#play_pause{
+    left: 43%;
+    top: 86.7%;
+}
+
+#stop{
+    left: 50.8%;
+    top: 86.7%;
+}
+
+#volume_plus{
+    left: 59.5%;
+    /*top: 90.3%;*/
+    top: 81.8%;
+}
+
+#volume_minus{
+    left: 36.65%;
+    /*top: 90.5%;*/
+    top: 81.8%;
+}
+
+#forward{
+    left: 57.4%;
+    top: 88.8%;
+}
+
+#backward{
+    left: 39.1%;
+    top: 88.8%;
+}
+
+#loop{
+    left: 48%;
+    top: 94%;
+}
+
+#volume-control{
+  position: absolute;
+  width: 18%;
+  left: 40.2%;
+  top: 83%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+#duration::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: hsl(50, 100%, 50%);
+  overflow: visible;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+}
+
+#duration{
+  -webkit-appearance: none;
+  background: linear-gradient(to right, #0075ff 0%, #0075ff 50%, #fff 50%, #fff 100%);
+  position: absolute;
+  left: 8%;
+  top: 79.4%;
+  width: 90%;
+  height: 3px;
+  cursor: pointer;
+  border-radius: 4px;
+  outline: none;
+}
+
+#timer{
+  position: absolute;
+  left: 0.5%;
+  top: 78.5%;
+  color: #ffffff;
+  font-size: large;
+}
+
+#file{
+    background-color: #494949;
+    color: #ffffff;
+    position: absolute;
+    right: 2.5%;
+    top: 84%;
+    height: 9%;
+    width: 33.5%;
+    padding: 1.5% 0% 0% 0%;
+    font-size: xx-large;
+    outline: none;
+    border: 3px solid #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+#file:hover{
+  background-color: #696969;
+}
+
+#input{
+    display: none;
+}
+
+#name{
+    position: absolute;
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    font-size: xx-large;
+    text-align: center;
+    width: 31%;
+    height: 9%;
+    top: 84%;
+    left: 1.7%;
+    /*
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    */
+    padding: 1.5% 1% 0% 1%;
+    border-radius: 10px;
+}
+
+#all_songs_are_here{
+    position: absolute;
+    bottom: 23%;
+    left: 0%;
+    width: 99.3%;
+    height: 67%;
+    border: 2px solid #ffffff;
+}
+
+#search_here{
+    position: absolute;
+    left: 0%;
+    top: 2%;
+    width: 100%;
+    height: 9%;
+}
+
+#search{
+    position: absolute;
+    width: 60%;
+    height: 90%;
+    left: 12%;
+    outline: none;
+    background-color: #ffffff;
+    background-image: url('./images/search_icon.png');
+    background-size: 2.4% 65%;
+    background-position: 1% 52%;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: large;
+    border: 0.5px solid #777777;
+    border-radius: 25px;
+    padding: 0% 1% 0% 2.6%;
+}
+
+#search:focus{
+    border: 1px solid #00ff00;
+}
+
+.song_type{
+  position: absolute;
+  height: 95%;
+  width: 3%;
+  color: #ffffff;
+  font-size: large;
+  cursor: pointer;
+  border-radius: 7px;
+  background-color: #444444;
+  transition: background-color 0.3s;
+  outline: none;
+}
+
+.song_type:hover{
+  background-color: #666666;
+}
+
+#favourites{
+  left: 85%;
+  border: 2px solid #00ff00;
+}
+
+#excellent{
+  left: 81%;
+  border: 2px solid #00ffff;
+}
+
+#good{
+  left: 77%;
+  border: 2px solid #ffff00;
+}
+
+#all_songs{
+    position: absolute;
+    top: 12.5%;
+    left: -0.2%;
+    width: 100%;
+    height: 80.5%;
+    padding: 1%;
+    overflow: auto;
+}
+
+.song{
+    width: 24%;
+    height: 20%;
+    background-color: #444444;
+    display: inline-block;
+    margin-left: 0.5%;
+    margin-bottom: 0.5%;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: xx-large;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: background-color 0.3s;
+}
+
+.song:hover{
+    background-color: #666666;
+}
+
+#all_info{
+    position: absolute;
+    bottom: 92%;
+    left: 0%;
+    width: 99.3%;
+    height: 6.5%;
+    border: 2px solid #ffffff;
+}
+
+#my_logo{
+    position: absolute;
+    height: 100%;
+    width: 3.3%;
+    left: 43%;
+    top: 0%;
+    background-image: url(./images/logo.png);
+    background-repeat: no-repeat;
+    background-size: 85% 85%;
+    background-position: center;
+}
+
+#my_brand{
+    position: absolute;
+    height: 100%;
+    left: 47%;
+    top: 5%;
+    font-size: xx-large;
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#file .fa{
+    cursor: pointer;
+}
+
+
+@media (max-width: 1299px){
+  #duration{
+    left: 10%;
+    width: 86%;
+  }
+}
+
+@media (max-width: 999px){
+  #duration{
+    left: 11%;
+  }
+}
+
+@media (max-width: 899px){
+  #menu{
+    font-size: xx-large;
+    top: 0.4%;
+    left: 0.5%;
+  }
+
+  #duration{
+    left: 13.5%;
+    width: 85%;
+  }
+
+  #forward{
+      display: none;
+  }
+
+  #backward{
+      display: none;
+  }
+
+  #my_logo{
+    left: 40%;
+  }
+
+  #my_brand{
+    left: 45%;
+  }
+
+  #play_pause{
+    left: 41%;
+    top: 86.7%;
+  }
+
+  #stop{
+    left: 52.8%;
+    top: 86.7%;
+  }
+
+  #loop{
+    left: 48%;
+    top: 92%;
+  }
+
+  .button1{
+    padding: 0.7%;
+  }
+
+  #file{
+    width: 32.5%;
+    font-size: x-large;
+  }
+
+  .song{
+    font-size: x-large;
+  }
+
+  .song_type{
+    width: 3.5%;
+  }
+}
+
+@media (max-width: 749px){
+  #duration{
+    left: 15%;
+    width: 83%;
+  }
+
+  #my_logo{
+    height: 85%;
+    width: 4%;
+    top: 7%;
+    left: 40%;
+  }
+
+  #my_brand{
+    font-size: x-large;
+    top: 15%;
+    left: 45%;
+  }
+}
+
+@media (max-width: 699px){
+  #menu{
+    font-size: x-large;
+    top: 0.6%;
+    left: 0.7%;
+  }
+
+  #loop{
+    left: 47.6%;
+    top: 91%;
+  }
+
+  #file{
+    width: 30%;
+    height: 8%;
+    top: 84.5%;
+  }
+
+  .song{
+    font-size: large;
+  }
+
+  .song_type{
+    width: 4.5%;
+  }
+
+  #favourites{
+    margin-left: 2%;
+  }
+
+  #excellent{
+    margin-left: 1%;
+  }
+
+  #search{
+    padding: 0% 1% 0% 4.6%;
+    background-size: 3.7% 60%;
+    background-position: 1.7% 52%;
+    left: 10%;
+  }
+}
+
+@media (max-width: 649px){
+  #duration{
+    left: 17%;
+    width: 80%;
+  }
+
+  #timer{
+    left: 2%;
+    top: 78.6%;
+    font-size: medium;
+  }
+
+  #duration::-webkit-slider-thumb {
+    width: 17px;
+    height: 17px;
+  }
+
+  #volume-control {
+    width: 17%;
+    left: 41.2%;
+    top: 82.5%;
+  }
+}
+
+@media (max-width: 599px){
+  #file{
+    font-size: large;
+    height: 6.5%;
+    padding: 2.5% 0% 0% 0%;
+  }
+
+  .song_type{
+    width: 5.5%;
+  }
+
+  #good{
+    left: 75%;
+  }
+
+  #excellent{
+    margin-left: 2%;
+    left: 79%;
+  }
+
+  #favourites{
+    margin-left: 2%;
+    left: 83;
+  }
+
+  #search{
+    left: 7%;
+  }
+
+  #duration {
+    left: 20%;
+    width: 75%;
+  }
+}
+
+@media (max-width: 549px){
+  #loop{
+    left: 48.2%;
+    top: 92%;
+  }
+
+  #my_logo {
+    height: 75%;
+    width: 5.3%;
+    top: 13%;
+    left: 38%;
+  }
+}
+
+@media (max-width: 499px){
+  .song {
+    font-size: medium;
+  }
+}
+
+@media (max-width: 449px){
+  .song {
+    margin-bottom: 2%;
+    margin-left: 1.25%;
+    width: 48%;
+    font-size: large;
+  }
+
+  #file {
+    font-size: medium;
+    height: 5.5%;
+    padding: 2.5% 0% 0% 0%;
+    top: 85.5%;
+  }
+
+  #name{
+    font-size: x-large;
+    height: 7%;
+    top: 85.5%;
+  }
+
+  #duration {
+    left: 22.5%;
+    width: 70%;
+  }
+
+  #volume-control::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    overflow: visible;
+  }
+
+  #volume-control{
+    height: 3px;
+    top: 83%;
+  }
+
+  #search {
+    padding: 0% 2% 0% 6.6%;
+    background-size: 4.7% 50%;
+    background-position: 2.7% 52%;
+    left: 3%;
+  }
+
+  .song_type{
+    font-size: small;
+    width: 6%;
+  }
+
+  #good{
+    left: 73%;
+  }
+
+  #excellent{
+    margin-left: 3%;
+    left: 77%;
+  }
+
+  #favourites{
+    margin-left: 4%;
+    left: 83%;
+  }
+}
+
+
+@media (max-width: 399px){
+  #timer {
+    left: 2%;
+    top: 78.4%;
+    font-size: small;
+  }
+
+  #duration {
+    left: 23%;
+    width: 72%;
+    top: 79%;
+  }
+
+  #duration::-webkit-slider-thumb {
+    width: 14px;
+    height: 14px;
+  }
+
+  #name {
+    font-size: large;
+    height: 5.5%;
+    top: 85.9%;
+    padding: 2.5% 1% 0% 1%;
+  }
+
+  #file {
+    font-size: small;
+    height: 4.5%;
+    padding: 2.5% 0% 0% 0%;
+    top: 86.5%;
+  }
+  
+  #my_logo {
+    height: 75%;
+    width: 6.7%;
+    top: 13%;
+    left: 37%;
+  }
+
+  #play_pause{
+    left: 38.5%;
+  }
+
+  #stop{
+    left: 53.8%;
+  }
+
+  #loop {
+    left: 47.4%;
+    top: 91%;
+  }
+
+  .imp {
+    padding-left: 1.75%;
+    padding-right: 1.75%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+  }
+
+  .imp-volume-minus {
+    padding-right: 1.25%;
+    padding-left: 1.25%;
+  }
+
+  #volume_minus{
+    left: 35.5%;
+  }
+}
+
+@media (max-width: 349px){
+  .song {
+    font-size: small;
+    height: 15%;
+  }
+
+  #search_here{
+    height: 7%;
+    top: 2.5;
+  }
+
+  .song_type {
+    font-size: x-small;
+    width: 7%;
+  }
+
+  #excellent{
+    margin-left: 4%;
+  }
+
+  #favourites{
+    margin-left: 6%;
+  }
+
+  #my_logo {
+    height: 70%;
+    width: 8%;
+    top: 16%;
+    left: 35%;
+  }
+
+  #volume-control::-webkit-slider-thumb {
+    width: 10px;
+    height: 10px;
+  }
+
+  #file{
+    padding: 1.5% 0% 0% 0%;
+  }
+
+  #duration{
+    left: 25%;
+  }
+
+  #my_brand{
+    font-size: large;
+    top: 20%;
+  }
+}
+
+
+@media (max-width: 299px){
+  #duration{
+    left: 27%;
+    width: 70%;
+  }
+
+  .song_type{
+    width: 8%;
+  }
+
+  #excellent{
+    margin-left: 5%;
+  }
+
+  #favourites {
+    margin-left: 8%;
+  }
+
+  #search{
+    font-size: medium;
+  }
+}

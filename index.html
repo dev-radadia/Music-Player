@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
+    <link rel="icon" href="./images/logo.png">
+</head>
+
+<body>
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="./playlist/playlist.html">Playlists</a>
+    <a href="./keyboard/index.html">Keyboard Shortcuts</a>
+  </div>
+</div>
+
+<div id="all_info" class="all_info">
+    <div id="my_logo"></div>
+    <div id="my_brand">SPRING</div>
+</div>
+
+<span id="menu" onclick="openNav()">&#9776;</span>
+
+<div id="all_songs_are_here" class="all_songs_are_here">
+        <div id="search_here" class="search_here">
+            <input type="text" id="search" class="search" placeholder="Search..." onkeyup="search()">
+
+            <button id="good" class="good song_type" title="Good" onclick="filter_good(this)">★</button>
+
+            <button id="excellent" class="excellent song_type" title="Excellent" onclick="filter_excellent(this)">★</button>
+
+            <button id="favourites" class="favourites song_type" title="Favourites" onclick="filter_fav(this)">★</button>
+        </div>
+
+        <div id="all_songs" class="all_songs"></div>
+    </div>
+
+
+
+    <label id="file">
+    <input type="file" id="input" onchange="done_ok(this)" accept="audio/*"/>
+    <b>Upload Audio</b> <label class="fa fa-upload"></label>
+    </label>
+
+    <div id="name"><marquee id="name_done"></marquee></div>
+    <audio id="here" onpause="audio_paused()" onplay="audio_played()" onended="audio_ended()"></audio>
+
+    <button id="play_pause" class="button imp fa fa-play" onclick="play_pause(this)" value="▶️" style="font-size:xx-large;"></button>
+
+    <button id="stop" class="button imp fa fa-square" onclick="stop()" style="font-size:xx-large;"></button>
+
+    <button id="forward" class="button imp-forward fa fa-forward" onclick="forward()"></button>
+
+    <button id="backward" class="button imp-backward fa fa-backward" onclick="backward()"></button>
+
+    <button id="loop" class="button1 fa fa-retweet" onclick="loop(this)"></button>
+
+    <button id="volume_plus" class="button imp-volume-plus fa fa-volume-up" onclick="volume_plus()"></button>
+
+    <button id="volume_minus" class="button imp-volume-minus fa fa-volume-down" onclick="volume_minus()"></button>
+    
+    <div id="timer">1:35 / 3:45</div>
+
+    <input type="range" id="duration" class="slider"  min="0" max="100" onchange="duration(this)" step="0.1" name="rangeInput" oninput="input_in_duration(this)" onmouseup="input_done_in_duration(this)">
+
+    <input type="range" id="volume-control" class="volume-control" min="0" max="1" step="0.05" value="1" onchange="volume_change(this)">
+
+    <script type="text/javascript" src="data.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

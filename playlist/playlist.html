@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="playlist.css">
+	<title>Spring - Playlists</title>
+	<link rel="icon" href="../images/logo.png">
+</head>
+
+<body>
+
+  <div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a href="../index.html">Home</a>
+      <a href="../keyboard/index.html">Keyboard Shortcuts</a>
+    </div>
+  </div>
+  <span id="menu" onclick="openNav()">&#9776;</span>
+
+  <div id="playlists_text">Playlists</div>
+  <div id="list_text">Songs</div>
+  <div id="playlists"></div>
+	<div id="list"></div>
+
+  <div id="name"><marquee id="name_done"></marquee></div>
+
+  <button id="play_pause" class="button fa fa-play" onclick="play_pause(this)" value="▶️"></button>
+
+  <button id="next" class="button1 fa fa-step-forward" onclick = "next(this)"></button>
+  <button id="previous" class="button1 fa fa-step-backward" onclick = "previous(this)"></button>
+  <button id="shuffle" class="button1 fa fa-random" onclick = "shuffle(this)"></button>
+  <button id="loop" class="button1 material-icons" onclick="loop(this)">repeat</button>
+  <button id="forward" class="button1 fa fa-forward" onclick="forward(this)"></button>
+  <button id="backward" class="button1 fa fa-backward" onclick="backward(this)"></button>
+
+  <div id="volume_info">
+    <button id="volume" class="button_vol" onclick="volume(this)"><i class="material-icons">&#xe050;</i></button>
+    
+    <input type="range" id="volume-control" class="volume-control" min="0" max="1" step="0.05" value="1" onchange="volume_change(this)" oninput="change_volume_button(this)">
+  </div>
+
+  <div id="timer">1:35 / 3:45</div>
+
+  <input type="range" id="duration" class="slider"  min="0" max="100" onchange="duration(this)" step="0.1" name="rangeInput" oninput="input_in_duration(this)" onmouseup="input_done_in_duration(this)">
+
+	<audio id="here" onpause="audio_paused(this)" onplay="audio_played(this)" onended="audio_ended(this)"></audio>
+
+
+
+  <script type="text/javascript" src="../data.js"></script>
+  <script type="text/javascript" src="../playlist_name.js"></script>
+  <script src="playlist.js"></script>
+</body>
+
+</html>
