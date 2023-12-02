@@ -1,4 +1,4 @@
-abc = "./"
+abc = "https://music-player-dev.vercel.app/"
 mydata = [
   {
     "name": "Hasi",
